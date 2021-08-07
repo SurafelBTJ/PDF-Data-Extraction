@@ -7,10 +7,10 @@ pacman::p_load('rvest', 'stringi', 'dplyr', 'tidyr', 'measurements', 'reshape2',
 owgr_url <- "http://www.owgr.com/about/?tabID={BBE32113-EBCB-4AD1-82AA-E3FE9741E2D9}&year="
 
 
-#setup year length
+#set year length
 year=2009:2019
 
-#function to extract the url links to all pdf files with the time period setup above
+#function to extract the html links of all pdf files with the time period set above
 pdf_links<-function(index)
 {
   repeat
