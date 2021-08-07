@@ -2,17 +2,15 @@
 if(!require(pacman))install.packages("pacman")
 pacman::p_load('rvest', 'stringi', 'dplyr', 'tidyr', 'measurements', 'reshape2','foreach','doParallel','raster','curl','httr','Iso','lambda.tools','RJSONIO','xml2','XML',"tabulizer",'janitor','stringi','stringr')
 
-#setting proxy server
 
-
-#set up the link to PGA website
+#setup the link to OWGR website
 owgr_url <- "http://www.owgr.com/about/?tabID={BBE32113-EBCB-4AD1-82AA-E3FE9741E2D9}&year="
 
 
-#set year duration
+#setup year length
 year=2009:2019
 
-#function to extract the url links to all pdf files with the time period set above
+#function to extract the url links to all pdf files with the time period setup above
 pdf_links<-function(index)
 {
   repeat
@@ -140,7 +138,8 @@ for(i in 1:length(index))
     years[index[[i]][j]]=rep(split_links$Year[i],index[[i]][j])
     weeks[index[[i]][j]]=rep(split_links$Week[i],index[[i]][j])
     
-    write.csv(unlisted[[index[[i]][j]]],paste0("C:/Users/SurafelTilahun/Luma Analytics/Lumineers - Documents/5 Users/Surafel/players_rank_data/reanked_data_",'_',years[index[[i]][j]],'_','week_',weeks[index[[i]][j]],'_',"page_",pages[index[[i]][j]],'.csv',rep=""))
+    #write the tables to local folders in csv. format
+    write.csv(unlisted[[index[[i]][j]]],paste0("C:/Users/SurafelTilahun/",'_',years[index[[i]][j]],'_','week_',weeks[index[[i]][j]],'_',"page_",pages[index[[i]][j]],'.csv',rep=""))
   
 
     
