@@ -4,4 +4,4 @@ This repo is about extracting several PDF files that capture all past ranking of
 
 The script is parametrized so that the user can specify how many years of data wants to retreive. Once done that, then the path to the destination folder can be customized, where the CSV files will be written to.
 
-Data Source: http://www.owgr
+Data Source: http://www.owgr.com
